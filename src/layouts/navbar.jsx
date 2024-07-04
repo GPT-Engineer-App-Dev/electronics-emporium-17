@@ -9,8 +9,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, ShoppingCart } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
+import Footer from "@/components/Footer";
 import { navItems } from "../App";
 
 const Layout = () => {
@@ -19,11 +20,15 @@ const Layout = () => {
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
         <DesktopNav />
         <MobileNav />
-        <UserMenu />
+        <div className="flex items-center gap-4">
+          <ShoppingCart className="h-5 w-5" />
+          <UserMenu />
+        </div>
       </header>
       <main className="flex-grow overflow-auto">
         <Outlet />
       </main>
+    <Footer />
     </div>
   );
 };
